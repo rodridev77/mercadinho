@@ -35,3 +35,39 @@
     font-size: 22px;
     font-weight: 700;
 }
+
+.IconCartComponent, .IconCartComponent .icon-cart-value {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+}
+
+.IconCartComponent .icon-cart-value {
+    background-color: #fff;
+    width: 140px;
+    padding-right: 25px;
+    min-height: 45px;
+    color: #444;
+    border-radius: 10px;
+}
+
+.IconCartComponent .icon-cart-ball {
+    background-color: #009c54;
+    width: 53px;
+    height: 53px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-left: -30px;
+    cursor: pointer;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 200px;
+}

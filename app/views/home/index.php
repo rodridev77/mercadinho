@@ -36,22 +36,19 @@
                         Login</a></li>
             </ul>
             <div class="col-sm-2">
-                <div class="input-group">
-
+                <div class="IconCartComponent">
                     <div class="icon-cart-value">
                         <div class="line-cart-value">
-                            R$: 0,00
+                            <div class="text-small-iconcart">R$ </div>
+                            <div>0</div>
+                            <div class="text-small-value">,
+                                <!-- -->00</div>
                         </div>
-                        
                     </div>
-
-                    <!-- <input type="text" class="form-control" placeholder="Procurar Produtos" value="0,00">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success btn-block search-product-btn" type="button">
-                            <i class="fa fa-shopping-cart fa-lg">
-                            </i></button>
-                    </span> -->
-                </div><!-- /input-group -->
+                    <div class="icon-cart-ball">
+                    <i class="fa fa-shopping-cart fa-lg"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
