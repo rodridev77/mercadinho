@@ -1,0 +1,37 @@
+.navbar-home {
+    display: flex;;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100px;
+}
+
+
+.brand-mercadinho {
+    align-content: flex-start;
+}
+
+.search-product-btn {
+    border: 2px solid white;
+}
+
+.navbarlink {
+    color: white;
+}
+
+.icon-cart-value {
+    background-color: #fff;
+    width: 140px;
+    padding-right: 25px;
+    min-height: 45px;
+    color: #444;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.line-cart-value {
+    display: -moz-box;
+    display: flex;
+    font-size: 22px;
+    font-weight: 700;
+}

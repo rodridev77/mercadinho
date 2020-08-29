@@ -10,8 +10,12 @@ if (ENVIRONMENT == "development") {
     define("BASE_URL", "http://meusite.com.br/");
 }
 
+function asset($asset){
+    return BASE_URL."/public/assets/".$asset;
+}
+
 // CONFIGURAÇÃO DO BANDO DE DADOS #####################
-define('HOST', 'localhost;port = 3308');
+define('HOST', 'localhost;port = 3316');
 define('DBNAME', 'banco');
 define('USER', 'root');
 define('PASS', '');
