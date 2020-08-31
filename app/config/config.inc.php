@@ -15,9 +15,9 @@ function asset($asset){
 }
 
 // CONFIGURAÇÃO DO BANDO DE DADOS #####################
-define('HOST', 'localhost;port = 3316');
-define('DBNAME', 'banco');
-define('USER', 'root');
-define('PASS', '');
+define('HOST', '127.0.0.1;port = 3306');
+define('DBNAME', 'mercadinho');
+define('USER', 'admin');
+define('PASS', 'password');
 define('DRIVER', 'mysql');
 define('CHARSET', 'utf8');

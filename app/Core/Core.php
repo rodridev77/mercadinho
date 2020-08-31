@@ -27,7 +27,7 @@ class Core {
                 $currentAction = "index";
             }
 
-            if (count($url > 0)) {
+            if (count($url) > 0) {
                 $params = $url;
             }
         } else {
@@ -36,7 +36,7 @@ class Core {
         }
 
         $currentController = ucfirst($currentController);
-        $prefixo = '\app\Controllers\\';
+        $prefixo = 'app\Controllers\\';
 
         if ((!file_exists('app/Controllers/' . $currentController . '.php')) || (!method_exists($prefixo . $currentController, $currentAction))) {
             $currentController = 'NotfoundController';
