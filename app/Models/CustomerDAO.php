@@ -15,7 +15,12 @@ class CustomerDAO
         $this->conn = Connection::connect();
     }
 
-
+    /**
+     * Undocumented function
+     *
+     * @param Customer $customer
+     * @return void
+     */
     public function insert(Customer $customer){
         $query = "INSERT INTO customer(name,email,password,street,district,number) VALUES(:name,:email,:password,:street,:district,:number)";
         $stmt = $this->conn->prepare($query);
@@ -31,15 +36,15 @@ class CustomerDAO
         return false;
     }
 
-    public function select(){
+    public function select(Customer $customer){
 
     }
 
-    public function delete(){
+    public function delete(Customer $customer){
         
     }
 
-    public function update(){
+    public function update(Customer $customer){
         
     }
 

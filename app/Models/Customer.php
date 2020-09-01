@@ -12,6 +12,7 @@ class Customer
     private string $name;
     private string $email;
     private string $password;
+    private string $rawPassword;
     private string $street;
     private string $district;
     private string $number;
@@ -25,11 +26,12 @@ class Customer
     }
 
     /**
-     * Set the value of id
+     * Undocumented function
      *
-     * @return  self
+     * @param integer $id
+     * @return void
      */ 
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
 
@@ -45,13 +47,14 @@ class Customer
     }
 
     /**
-     * Set the value of name
+     * Undocumented function
      *
-     * @return  self
+     * @param string $name
+     * @return void
      */ 
-    public function setName($name)
+    public function setName(string $name)
     {
-        $this->name = $name;
+        $this->name = filter_var($name,FILTER_SANITIZE_STRING);
 
         return $this;
     }
@@ -65,13 +68,14 @@ class Customer
     }
 
     /**
-     * Set the value of email
+     * Undocumented function
      *
-     * @return  self
-     */ 
-    public function setEmail($email)
+     * @param string $email
+     * @return void
+     */
+    public function setEmail(string $email)
     {
-        $this->email = $email;
+        $this->email = filter_var($email,FILTER_VALIDATE_EMAIL);
 
         return $this;
     }
@@ -84,15 +88,31 @@ class Customer
         return $this->password;
     }
 
-    /**
-     * Set the value of password
-     *
-     * @return  self
-     */ 
-    public function setPassword($password)
+    public function getRawPassword()
     {
-        $this->password = $password;
+        return $this->rawPassword;
+    }
 
+    /**
+     * Undocumented function
+     *
+     * @param string $password
+     * @return void
+     */
+    public function setRawPassword(string $password)
+    {
+        $this->rawPassword = $password;
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param string $password
+     * @return void
+     */ 
+    public function setPassword(string $password)
+    {
+        $this->password = password_hash($password,PASSWORD_DEFAULT);
         return $this;
     }
 
@@ -105,13 +125,14 @@ class Customer
     }
 
     /**
-     * Set the value of street
+     * Undocumented function
      *
-     * @return  self
-     */ 
-    public function setStreet($street)
+     * @param string $street
+     * @return void
+     */
+    public function setStreet(string $street)
     {
-        $this->street = $street;
+        $this->street = trim($street);
 
         return $this;
     }
@@ -125,13 +146,14 @@ class Customer
     }
 
     /**
-     * Set the value of district
+     * Undocumented function
      *
-     * @return  self
-     */ 
-    public function setDistrict($district)
+     * @param string $district
+     * @return void
+     */
+    public function setDistrict(string $district)
     {
-        $this->district = $district;
+        $this->district = filter_var($district,FILTER_SANITIZE_STRING);
 
         return $this;
     }
@@ -144,14 +166,15 @@ class Customer
         return $this->number;
     }
 
-    /**
-     * Set the value of number
-     *
-     * @return  self
-     */ 
-    public function setNumber($number)
+   /**
+    * Undocumented function
+    *
+    * @param string $number
+    * @return void
+    */ 
+    public function setNumber(string $number)
     {
-        $this->number = $number;
+        $this->number = trim($number);
 
         return $this;
     }
