@@ -31,7 +31,7 @@ class Auth
         $stmt->bindValue(":email", $customer->getEmail(), PDO::PARAM_STR);
 
         if ($stmt->execute()) {
-
+            
             $newCustomer = $stmt->fetch(PDO::FETCH_OBJ);
             
             if (password_verify($customer->getRawPassword(), $newCustomer->password)) {
@@ -41,10 +41,9 @@ class Auth
                 $customer->setDistrict($newCustomer->district);
                 $customer->setNumber($newCustomer->number);
                 $customer->setRawPassword("");
-                return $customer;
             }
         }
-        return false;
+        return $customer;
     }
 
     public function logout()

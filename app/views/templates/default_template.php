@@ -9,11 +9,11 @@
     <link rel="stylesheet" href=<?= asset("css/bootstrap.min.css"); ?>>
     <link rel="stylesheet" href=<?= asset("css/home.css"); ?>>
     <link rel="stylesheet" href=<?= asset("fontawesome/css/font-awesome.min.css"); ?>>
-    <link rel="stylesheet" href=<?= asset("css/template.css");?>>
+    <link rel="stylesheet" href=<?= asset("css/template.css"); ?>>
 </head>
 
 <body>
-    <nav class="navbar navbar-primary bg-primary fixed-top">
+    <nav class="navbar navbar-primary bg-primary fixed-to p" >
 
         <div class="d-inline-flex">
             <a class="navbar-brand" style="color: white;" href="#">
@@ -44,22 +44,24 @@
                 <li class="nav-item">
 
                     <div class="btn-group">
-                        <a href="#" class="nav-link text-white" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                            Login</a>
+                        <a href="#" class="nav-link text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            <span id="login">
+
+                        <?=isset($_SESSION['user']) ? $_SESSION['user'] : "Login";?>
+                           
+                        </span></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <form class="px-4 py-3">
+                            <form class="px-4 py-3" onsubmit="login(event)">
                                 <div class="form-group">
                                     <label for="Email">Email</label>
-                                    <input type="email" class="form-control" name="email" id="Email"
-                                        placeholder="">
+                                    <input type="email" class="form-control" name="email" id="Email" placeholder="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Senha</label>
-                                    <input type="password" class="form-control" name="password" id="password"
-                                        placeholder="">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="senha" required>
                                 </div>
-                            
+
                                 <button type="submit" class="btn btn-primary">entrar</button>
                             </form>
                             <div class="dropdown-divider"></div>
@@ -89,10 +91,34 @@
         </div>
     </nav>
 
-    <?php $this->loadViewInTemplate($viewPath, $viewName, $viewData); ?>
+    <div class="container my-5">
+        <?php $this->loadViewInTemplate($viewPath, $viewName, $viewData); ?>
+    </div>
 
-    <script src=<?=asset("js/jquery.min.js");?>></script>
-    <script src=<?=asset("js/bootstrap.min.js");?>></script>
+    <script src=<?= asset("js/jquery.min.js"); ?>></script>
+    <script src=<?= asset("js/bootstrap.min.js"); ?>></script>
+    <script src=<?= asset("js/axios.min.js"); ?>></script>
+    <script>
+        const BASE_URL = "http://localhost/mercadinho";
+
+        function login(event) {
+
+            event.preventDefault();
+
+            const data = {
+                "email": event.target.email.value,
+                "password": event.target.password.value
+            }
+
+            console.log('data :>> ', data);
+
+            axios.post(BASE_URL + "/auth/login", data)
+                .then(response => {
+                    console.log('response :>> ', response.data);
+                    location.reload();
+                }).catch(error => console.log(error));
+        }
+    </script>
 </body>
 
 </html>

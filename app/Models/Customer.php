@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace app\Models;
 
-use app\Core\Connection;
-
 class Customer
 {
-    private int $id;
+    private ?int $id = null;
     private string $name;
     private string $email;
     private string $password;
