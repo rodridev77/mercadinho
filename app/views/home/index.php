@@ -2,7 +2,7 @@
         <div class="col-8">
             <div class="card-deck">
                 <div class="card">
-                    <img class="card-img-top" src=<?= asset("leite.jpg"); ?> alt="Card image cap">
+                    <img class="card-img-top" src=<?= asset("images/leite.jpg"); ?> alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src=<?= asset("leite.jpg"); ?> alt="Card image cap">
+                    <img class="card-img-top" src=<?= asset("images/leite.jpg"); ?> alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src=<?= asset("leite.jpg"); ?> alt="Card image cap">
+                    <img class="card-img-top" src=<?= asset("images/leite.jpg"); ?> alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
