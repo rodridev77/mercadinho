@@ -3,8 +3,11 @@
 namespace app\Controllers;
 
 use app\Core\Controller;
+use app\Models\ProductDAO;
+use app\Models\Product;
 
 class HomeController extends Controller {
+
     private $data = [];
 
     public function index() {

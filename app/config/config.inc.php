@@ -17,7 +17,7 @@ function asset($asset){
 // CONFIGURAÇÃO DO BANDO DE DADOS #####################
 define('HOST', '127.0.0.1;port = 3306');
 define('DBNAME', 'mercadinho');
-define('USER', 'admin');
-define('PASS', 'password');
+define('USER', 'root');
+define('PASS', '');
 define('DRIVER', 'mysql');
 define('CHARSET', 'utf8');
