@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-primary fixed-to TopBarContainer">
+    <nav class="navbar navbar-primary fixed-top TopBarContainer">
 
         <div class="block-top-nav">
             <div class="row area-block-top-nav">
@@ -27,7 +27,7 @@
 
                 <div class="col-sm-5 ">
                     <form action="" >
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3 my-3">
                             <input type="text" class="form-control" placeholder="Procurar Produtos">
                             <span class="input-group-append">
                                 <button class="btn btn-success" type="button">Buscar</button>
