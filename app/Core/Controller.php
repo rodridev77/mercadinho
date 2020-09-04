@@ -22,4 +22,9 @@ class Controller
         extract($viewData);
         require_once "app/views/" . $viewPath . $viewName . ".php";
     }
+
+    public function loadAdminTemplate($viewPath, $viewName, $viewData = array())
+    {
+        require_once "app/views/templates/admin_template.php";
+    }
 }

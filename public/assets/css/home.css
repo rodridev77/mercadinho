@@ -1,17 +1,76 @@
-html, body{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+body
+{
     margin: 0;
     padding: 0; 
-    border:none; 
-    outline:none;
-    list-style-type:none;
-    }
+    color: #fff;
+    background-color: rgba(160,170,178,.15);
+}
 
-.brand-mercadinho {
-    align-content: flex-start;
+.TopBarContainer 
+{
+    background-color: #004587;
+    min-height: 100px;
+    box-sizing: border-box;
+    position: sticky;
+    display: flex;
+    justify-content: center;
+}
+
+.block-top-nav 
+{
+    width: 100%;
+}
+
+.area-block-top-nav 
+{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: left;
+    width: 95%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+    justify-content: space-between;
+}
+
+.logo-component 
+{
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .search-product-btn {
     border: 2px solid white;
+}
+
+.group-icon-top 
+{
+    display: flex;
+    justify-content: inherit;
+    max-width: 25%;
+}
+
+.icon-inline 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+.icon-inline 
+{
+    min-width: 120px;
+}
+
+.login-icon 
+{
+    display: flex;
 }
 
 .navbarlink {
@@ -70,4 +129,177 @@ html, body{
     color: #fff;
     border: 2px solid #fff;
     border-radius: 200px;
+}
+
+.menu-back-ground
+{
+    width: 100%;
+    height: 50px;
+    background-color: #0069a3;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-box
+{
+    color: #fff;
+}
+
+.menu-bar-component
+{
+    display: flex;
+    justify-content: space-between;
+    min-height: 50px;
+}
+
+.menu-bar-component a
+{
+    color: #fff;
+}
+
+/** ########## Index Home ########## **/
+.container-products 
+{   
+    padding-top: 30px;
+    background-color: #fff;
+}
+ 
+.product-container-title > h2
+{
+    color: #004587;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card .product-card 
+{
+    min-height: 160px;
+}
+
+.card .card-item
+{
+    height: 100%;
+    box-shadow: none;
+    transition: all .3s ease;
+    transition-delay: 0s;
+    cursor: pointer;
+    padding: 3px 3px 50px;
+}
+
+.card .product-img
+{
+    padding-top: 10px;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-img img
+{
+    width: 90%;
+    max-height: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.card-body .card-text
+{
+    color: #444;
+    min-height: 90px;
+    font-size: .875rem;
+    font-weight: 200;
+    font-family: 'Roboto';
+}
+
+.card-body .price-box
+{
+    min-height: 90px;
+    color: #004587;
+    font-weight: 400;
+    font-size: .870rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.price-box p 
+{
+    text-align: center;
+}
+
+.card-body .button-buy-component
+{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    transition: all .3s ease;
+    transition-delay: 0s;
+    box-sizing: border-box;
+}
+
+.button-buy-component button
+{
+    height: 40px;
+    margin: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+/** ########## Index Layout-Footer ########## **/
+.newsletter-container
+{
+    padding: 20px;
+    background-color: #004587;
+    display: flex;
+    justify-content: center;
+}
+
+.newsletters-container-box 
+{
+    width: 90%;
+    max-width: 1280px;
+}
+
+.newsletter-container h3 
+{
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.newsletter-form
+{
+    justify-content: space-around;
+}
+
+.newsletter-input 
+{
+    border-radius: 5px;
+    min-width: 250px;
+    height: 40px;
+}
+
+.btn-box
+{
+    padding-top: 32px;
+}
+
+.btn-signup 
+{
+    border: 1px solid #fff;
+}
+
+.copyright-box
+{
+    display: flex;
+    justify-content: center;
+    color: #004587;
+}
+
+.copyright-box .copyright-text
+{
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: .9rem;
 }
