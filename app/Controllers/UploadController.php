@@ -10,7 +10,7 @@ class UploadController{
     private string $fileName;
 
     /**
-     * opicioal : Recebe o caminho do upload 
+     * opcional : Recebe o caminho do upload 
      *
      * @param string $path
      */

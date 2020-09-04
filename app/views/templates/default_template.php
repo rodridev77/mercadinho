@@ -25,8 +25,8 @@
                     </a>
                 </div>
 
-                <div class="col-sm-5">
-                    <form action="">
+                <div class="col-sm-5 ">
+                    <form action="" >
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Procurar Produtos">
                             <span class="input-group-append">
@@ -47,14 +47,14 @@
                 </div>
 
                 <div class="col-sm-3 login-icon">
-                    <div class="">
+                    <div class="icon-inline">
                         <div class="btn-group">
                             <a href="#" class="nav-link text-white" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                                 <span id="login">
 
-                                    <?=isset($_SESSION['user']) ? $_SESSION['user'] : "Login";?>
+                                    <?=$_SESSION['user'] ?? "Login";?>
 
                                 </span></a>
                             <div class="dropdown-menu dropdown-menu-right">
