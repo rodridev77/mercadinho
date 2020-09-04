@@ -36,13 +36,12 @@
                     </form>
                 </div>
 
-                <div class="col-sm-2 group-icon-top">
+                <div class="col-sm-2">
                     <div class="icon-inline">
                         <div>
-                            <img src="<?php echo BASE_URL.'public/assets/img/media/mylist.png'; ?>" width="40px">
+                            <img src="<?php echo BASE_URL.'public/assets/img/media/shoplist.png'; ?>" width="40px">
                         </div>
-
-                        <div class="icon-text">Minha Lista</div>
+                        <div class="icon-text px-1">Minha Lista</div>
                     </div>
                 </div>
 
@@ -58,7 +57,7 @@
 
                                 </span></a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <form class="" onsubmit="login(event)">
+                                <form class="px-4 py-3" onsubmit="login(event)">
                                     <div class="form-group">
                                         <label for="Email">Email</label>
                                         <input type="email" class="form-control" name="email" id="Email"
