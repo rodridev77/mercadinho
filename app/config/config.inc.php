@@ -3,6 +3,8 @@
 require_once "environment.php";
 include "libs/vendor/autoload.php";
 
+define("ROOT_PATH",$_SERVER['DOCUMENT_ROOT']."/mercadinho");
+
 // CONFIGURAÇÃO DO AMBIENTE #####################
 if (ENVIRONMENT == "development") {
     define("BASE_URL", "http://localhost/mercadinho/");
