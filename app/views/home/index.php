@@ -7,7 +7,7 @@
             <div class="card product-card">
                 <div class="card-item">
                     <div class="product-img">
-                        <img class="card-img-top" src=<?= asset("leite.jpg"); ?> alt="Card image cap">
+                        <img class="card-img-top" src="<?= BASE_URL.'/public/assets/images/leite.jpg'; ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -27,7 +27,7 @@
             <div class="card product-card">
                 <div class="card-item">
                     <div class="product-img">
-                        <img class="card-img-top" src=<?= asset("leite.jpg"); ?> alt="Card image cap">
+                        <img class="card-img-top" src="<?= BASE_URL.'/public/assets/images/leite.jpg'; ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -47,7 +47,7 @@
             <div class="card product-card">
                 <div class="card-item">
                     <div class="product-img">
-                        <img class="card-img-top" src=<?= asset("leite.jpg"); ?> alt="Card image cap">
+                        <img class="card-img-top" src="<?= BASE_URL.'/public/assets/images/leite.jpg'; ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -67,7 +67,7 @@
             <div class="card product-card">
                 <div class="card-item">
                     <div class="product-img">
-                        <img class="card-img-top" src=<?= asset("leite.jpg"); ?> alt="Card image cap">
+                        <img class="card-img-top" src="<?= BASE_URL.'/public/assets/images/leite.jpg'; ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
