@@ -142,21 +142,21 @@
             </div>
 
             <div class="col-sm-7">
-                <form method="post">
+                <form onsubmit="newsletter(event)">
                     <div class="form-row newsletter-form">
                         <div class="form-group">
                             <label for="newsletter-name">Nome: </label>
-                            <input class="form-control newsletter-input" type="text" name="newsletter-name"
+                            <input class="form-control newsletter-input" type="text" name="newsletter_name"
                                 id="newsletter-name">
                         </div>
                         <div clasa="form-group">
                             <label for="newsletter-email">Email: </label>
-                            <input class="form-control newsletter-input" type="email" name="newsletter-email"
+                            <input class="form-control newsletter-input" type="email" name="newsletter_email"
                                 id="newsletter-email">
                         </div>
 
                         <div class="form-group btn-box">
-                            <button class="btn btn-success btn-signup" type="button">Cadastrar</button>
+                            <button class="btn btn-success btn-signup" type="submit">Cadastrar</button>
                         </div>
                     </div>
 
@@ -194,6 +194,28 @@
             .then(response => {
                 console.log('response :>> ', response.data);
                 location.reload();
+            }).catch(error => console.log(error));
+    }
+
+    function newsletter(event) {
+
+        event.preventDefault();
+
+        const data = {
+            "newsletter_name": event.target.newsletter_name.value,
+            "newsletter_email": event.target.newsletter_email.value
+        }
+
+        console.log('data :>> ', data);
+
+        axios.post(BASE_URL + "/Newsletter/addToNewsletter", data)
+            .then(response => {
+                console.log('response :>> ', response.data);
+                if(response.data.success){
+                    alert("Email adicionado")
+                }else{
+                    alert("Email não adicionado")
+                }
             }).catch(error => console.log(error));
     }
     </script>
