@@ -17,6 +17,8 @@ class Product
     private string $sku;
     private int $categoryId;
     private int $brandId;
+    private int $off;
+    private string $brandName;
 
     public function getId() : int
     {
@@ -107,5 +109,30 @@ class Product
     public function setBrandId(int $brandId) : void
     {
         $this->brandId = $brandId;
+    }
+
+    public function setOff(int $off) : void
+    {
+        $this->off = $off;
+    }
+
+    public function getOff() : int
+    {
+        return $this->off;
+    }
+
+    public function getBrandName() : string
+    {
+        return $this->brandName;
+    }
+
+    public function setBrandName(string $brandName) : void
+    {
+        $this->brandName = $brandName;
+    }
+
+    public function isEmpty(): int
+    {
+        return $this->id ?? 0;
     }
 }

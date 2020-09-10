@@ -4,13 +4,12 @@
         </div>
 
         <div class="card-deck">
-            <div class="card product-card">
+            <div class="card product-card" onclick="productPage();">
                 <div class="card-item">
                     <div class="product-img">
                         <img class="card-img-top" src="<?= BASE_URL.'/public/assets/images/leite.jpg'; ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional
                             content.
                         </p>
@@ -22,6 +21,7 @@
                         </div>
                     </div>
                 </div>
+                <input type="hidden" id="product-id" value="1">
             </div>
             
             <div class="card product-card">
@@ -30,7 +30,6 @@
                         <img class="card-img-top" src="<?= BASE_URL.'/public/assets/images/leite.jpg'; ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional
                             content.
                         </p>
@@ -50,7 +49,6 @@
                         <img class="card-img-top" src="<?= BASE_URL.'/public/assets/images/leite.jpg'; ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional
                             content.
                         </p>
@@ -70,7 +68,6 @@
                         <img class="card-img-top" src="<?= BASE_URL.'/public/assets/images/leite.jpg'; ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional
                             content.
                         </p>

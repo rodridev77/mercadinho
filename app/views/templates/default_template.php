@@ -6,10 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mercadinho</title>
-    <link rel="stylesheet" href=<?= asset("css/bootstrap.min.css"); ?>>
-    <link rel="stylesheet" href=<?= asset("css/home.css"); ?>>
-    <link rel="stylesheet" href=<?= asset("fontawesome/css/font-awesome.min.css"); ?>>
-    <link rel="stylesheet" href=<?= asset("css/template.css"); ?>>
+    <link rel="stylesheet" href="<?= BASE_URL.'public/assets/css/bootstrap.min.css'; ?>" >
+    <link rel="stylesheet" href="<?= BASE_URL.'public/assets/css/home.css'; ?>">
+    <link rel="stylesheet" href="<?= BASE_URL.'public/assets/fontawesome/css/font-awesome.min.css'; ?>">
+    <link rel="stylesheet" href="<?= BASE_URL.'public/assets/css/template.css'; ?>">
+    <link rel="stylesheet" href="<?= BASE_URL.'public/assets/css/product.css'; ?>">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
         <div class="block-top-nav">
             <div class="row area-block-top-nav">
                 <div class="col-sm-1 logo-component">
-                    <a class="navbar-brand" style="color: white;" href="#">
+                    <a class="navbar-brand" style="color: white;" href="<?= BASE_URL; ?>">
                         <i class="fa fa-shopping-cart fa-lg">
                         </i>
                         Market
@@ -173,9 +174,10 @@
         </div>
     </footer>
 
-    <script src=<?= asset("js/jquery.min.js"); ?>></script>
-    <script src=<?= asset("js/bootstrap.min.js"); ?>></script>
-    <script src=<?= asset("js/axios.min.js"); ?>></script>
+    <script src="<?= BASE_URL.'public/assets/js/jquery.min.js'; ?>"></script>
+    <script src="<?= BASE_URL.'public/assets/js/bootstrap.min.js'; ?>"></script>
+    <script src="<?= BASE_URL.'public/assets/js/axios.min.js'; ?>"></script>
+    <script src="<?= BASE_URL.'public/assets/js/product.js'; ?>"></script>
     <script>
     const BASE_URL = "http://localhost/mercadinho";
 

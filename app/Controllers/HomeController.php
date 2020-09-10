@@ -7,7 +7,7 @@ use app\Models\ProductDAO;
 use app\Models\Product;
 
 class HomeController extends Controller {
-    private array $data = [];
+    private Array $data;
     private ProductDAO $prodDAO;
     private Product $prod;
 
