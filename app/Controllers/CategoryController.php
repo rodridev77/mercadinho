@@ -13,13 +13,16 @@ class CategoryController extends Controller {
 
     public function index() : void
     {
-        header('Location: '.BASE_URL);
-    }
-
-    public function show($id = 0) : void
-    {
+        //header('Location: '.BASE_URL);
         $viewPath = 'category/';
         $viewName = "category";
+        $this->loadTemplate($viewPath, $viewName);
+    }
+
+    public function show($id = 0,$page=1) : void
+    {
+        $viewPath = 'category/';
+        $viewName = "productlist";
 
         if (empty($id)):
             header('Location: '.BASE_URL);
@@ -29,8 +32,8 @@ class CategoryController extends Controller {
         $this->prod = new Product();
 
         $this->prod->setCategoryId(intval($id));
-        $this->data['category'] = $this->prodDAO->getProductByCategory($this->prod);
+        $this->data['category'] = $this->prodDAO->getProductByCategory($this->prod,($page * 4));
         
-        $this->loadTemplate($viewPath, $viewName, $this->data);
+        $this->loadView($viewPath, $viewName, $this->data);
     }
 }
