@@ -78,7 +78,7 @@ class ProductDAO {
         return $this->product;
     }
 
-    public function getProductByCategory(Product $prod, int $limit = 4, int $rowStart = 0) : array
+    public function getProductByCategory(Product $prod, int $rowStart = 0,int $limit = 4) : array
     {
         $categoryProductListAux = [];
         $categoryProductList = [];
@@ -93,7 +93,7 @@ class ProductDAO {
                 $query = "SELECT *, ".
                 "(select brand.name from brand where brand.id = product.brand_id) as brand_name, ".
                 "(select category.name from category where category.id = product.category_id) as category_name ".
-                "FROM product WHERE category_id = :id ORDER BY RAND() LIMIT :rowstart, :limit";
+                "FROM product WHERE category_id = :id ORDER BY product.title ASC LIMIT :rowstart, :limit";
                 
                 $stmt = $this->conn->prepare($query);
                 $stmt->bindValue(":id", $prod->getCategoryId(), PDO::PARAM_INT);

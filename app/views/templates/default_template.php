@@ -113,7 +113,7 @@
                                 <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Cereais</a>
+                                <a class="nav-link" href="http://localhost/mercadinho/category/index">Cereais</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Bebidas</a>
