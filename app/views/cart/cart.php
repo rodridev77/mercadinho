@@ -51,7 +51,24 @@
         </div>
 
         <div class="col-sm-4 cart-left-column">
-            .....
+            <div class="cart-wrapper">
+                <h3 class="summary-title">Resumo dos Pedidos</h3>
+                <ul class="summary-details">
+                    <li class="summary-detail">
+                        <span>2 produtos</span>
+                        <span>R$ 300,00</span>
+                    </li>
+                    <li class="summary-detail">
+                        <span>Frete</span>
+                        <span>R$ 0,00</span>
+                    </li>
+                </ul>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span>R$ 800,00</span>
+                </div>
+                <button id="buy-btn" class="summary-buy-btn btn btn-primary btn-block">Comprar</button>
+            </div>
         </div>
     </section>
 </div>
