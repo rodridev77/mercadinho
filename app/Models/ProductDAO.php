@@ -17,24 +17,9 @@ class ProductDAO {
         $this->conn = Connection::connect();
     }
 
-    public function getProducts($qtd = 0) {
-        $produtos = array();
-        $query = "SELECT * FROM produtos ORDER BY RAND()";
-        $stmt = $this->conn->query($query);
-
-        if ($qtd > 0) {
-            $query = "SELECT * FROM produtos LIMIT :limite";
-            $stmt = $this->conn->prepare($query);
-            $stmt->bindValue(":limite", (int) $qtd, PDO::PARAM_INT);
-        }
-
-        if ($stmt->execute()) {
-            if ($stmt->rowCount()) {
-                $produtos = $stmt->fetchAll();
-            }
-        }
-
-        return $produtos;
+    public function getProductList(int $categoryId, int $limit = 4) : array
+    { 
+        return $this->getProductByCategory($categoryId);
     }
 
     public function getProductById(Product $prod) : Product
@@ -78,14 +63,14 @@ class ProductDAO {
         return $this->product;
     }
 
-    public function getProductByCategory(Product $prod, int $rowStart = 0,int $limit = 4) : array
+    public function getProductByCategory(int $categoryId, int $rowStart = 0,int $limit = 4) : array
     {
         $categoryProductListAux = [];
         $categoryProductList = [];
         $this->product = new Product();
         $imageDAO = new ImageDAO();
 
-        if (!empty($prod->getCategoryId())) 
+        if (!empty($categoryId)) 
         {
             try 
             {
@@ -96,7 +81,7 @@ class ProductDAO {
                 "FROM product WHERE category_id = :id ORDER BY product.title ASC LIMIT :rowstart, :limit";
                 
                 $stmt = $this->conn->prepare($query);
-                $stmt->bindValue(":id", $prod->getCategoryId(), PDO::PARAM_INT);
+                $stmt->bindValue(":id", $categoryId, PDO::PARAM_INT);
                 $stmt->bindValue(":rowstart", $rowStart, PDO::PARAM_INT);
                 $stmt->bindValue(":limit", $limit, PDO::PARAM_INT);
                 $stmt->execute();

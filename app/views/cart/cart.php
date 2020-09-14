@@ -1,3 +1,5 @@
+
+<?php var_dump($list); ?>
 <div class="container container-products">
     <header class="cart-title">
         <h2 class="page-title">Minha Cesta</h2>
@@ -33,13 +35,15 @@
                                 </div>
 
                                 <div class="col-sm-3 product-qtty text-center">
-                                    <div class="product-qtty-box">
-                                        <span class="qtty-icon-minus">-</span>
-                                        <input type="number" name="qtty-value" min="1" value="1">
-                                        <span class="qtty-icon-plus">+</span>
+                                    <div class="product-qtty-box add_to_cart">
+                                        <input type="hidden" id="product-id" name="product-id"
+                                            value="<?php echo $product_info['id'] ?>">
+                                        <span class="qtty-icon-minus" data-action="decrease">-</span>
+                                        <input id="count-product" type="number" size="3" name="count-product" min="1" value="1"  disabled>
+                                        <span class="qtty-icon-plus" data-action="increase">+</span>
                                     </div>
                                 </div>
-
+                                
                                 <div class="col-sm-3 product-price text-center">
                                     R$ 200,00
                                 </div>

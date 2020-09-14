@@ -3,7 +3,9 @@
 namespace app\Models;
 
 use app\Core\Connection;
+use app\Models\ProductDAO;
 use app\Models\Product;
+use app\Models\ImageDAO;
 
 class Cart {
 
@@ -18,6 +20,7 @@ class Cart {
     {
         $prodDAO = new ProductDAO();
         $prod = new Product();
+        $imageDAO = new ImageDAO();
         $cartList = [];
         $cart = [];
 
@@ -26,11 +29,13 @@ class Cart {
         endif;
 
         foreach ($cart as $id => $count) {
-            $prod = $prodDAO->getProductById($id);
+            $prod->setId($id);
+            $prod = $prodDAO->getProductById($prod);
             $prodObj = new \stdClass;
 
             $prodObj = $prod;
             $prodObj->count = $count;
+            $prodObj->image = $imageDAO->getUrlByProductId($prod);
 
             $cartList[] = $prodObj;
         }

@@ -13,7 +13,7 @@ class CartController extends Controller {
     {
         $viewPath = 'cart/';
         $viewName = "cart";
-        
+    
         $cart = new Cart();
 
         $shipping = array(
@@ -36,24 +36,27 @@ class CartController extends Controller {
 
     public function add() 
     {
+        $data = json_decode(file_get_contents("php://input"),true);
 
-        if (!empty($_POST['product_id'])) 
+        if (!empty($data['productId'])) 
         {
-            $product_id = intval($_POST['product_id']);
-            $product_qtty = intval($_POST['product_qtty']);
+            $productId = intval($data['productId']);
+            $countProduct = intval($data['countProduct']);
 
             if (!isset($_SESSION['cart'])):
-                $_SESSION['cart'] = array();
+                $_SESSION['cart'] = [];
             endif;
 
-            if (isset($_SESSION['cart'][$product_id])):
-                $_SESSION['cart'][$product_id] += $product_qtty;
+            if (isset($_SESSION['cart'][$productId])):
+                $_SESSION['cart'][$productId] += $countProduct;
             else:
-                $_SESSION['cart'][$product_id] = $product_qtty;
+                $_SESSION['cart'][$productId] = $countProduct;
             endif;
+
+            echo json_encode(["success"=>true]);
         }
 
-        header("Location: " . BASE_URL . "cart");
+        echo json_encode(["success"=>false]);
     }
 
     public function delete($id) {

@@ -9,18 +9,15 @@ use app\Models\Product;
 class HomeController extends Controller {
     private Array $data;
     private ProductDAO $prodDAO;
-    private Product $prod;
 
-    public function index() {
+    public function index() : void
+    {
         $viewPath = 'home/';
         $viewName = "index";
 
         $this->prodDAO = new ProductDAO();
-        $this->prod = new Product();
 
-        $this->prod->setId(1);
-        $this->data['product_list'] = $this->prodDAO->getProductById($this->prod);
-        //var_dump($this->data['product_list']);die;
+        $this->data['productList'] = $this->prodDAO->getProductList(1);
         
         $this->loadTemplate($viewPath, $viewName, $this->data);
     }

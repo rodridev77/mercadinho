@@ -33,13 +33,16 @@
                         </div>
                     </div>
                     <div class="box-price-component">
-                        <span class="price-text"><?= 'R$ ' . number_format($product->getPrice(), 2, ',', '.'); ?></span> un
+                        <span class="price-text"><?= 'R$ ' . number_format($product->getPrice(), 2, ',', '.'); ?></span>
+                        un
                     </div>
                 </div>
                 <div class="col-sm-7 box-button-add">
                     <div class="btn-buy">
                         <div class="btn-component">
-                            <button class="btn btn-success" type="button">Adicionar</button>
+                            <button class="btn btn-success" type="button" onclick="addToCart();">Adicionar</button>
+                            <input type="hidden" id="product-id" name="product-id" value="<?= $product->getId(); ?>">
+                            <input type="hidden" id="count-product" name="count-product" value="1">
                         </div>
                     </div>
                 </div>

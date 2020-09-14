@@ -189,7 +189,6 @@ body
     box-shadow: none;
     transition: all .3s ease;
     transition-delay: 0s;
-    cursor: pointer;
     padding: 3px 3px 50px;
 }
 
@@ -200,6 +199,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .product-img img

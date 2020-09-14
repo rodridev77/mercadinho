@@ -214,10 +214,12 @@ div .product-qtty-box
 
 .product-qtty-box input
 {
-    width: 10px;
+    width: 30px;
     height: 35px;
     border: none;
     text-align: center;
+    background-color: #fff;
+    color: #444;
 }
 
 input[type="number"]

@@ -7,14 +7,6 @@ use app\Models\ProductDAO;
 use app\Models\Product;
 
 class ProductController extends Controller {
-    private Array $data;
-    private ProductDAO $prodDAO;
-    private Product $prod;
-
-    public function index() : void
-    {
-        header('Location: '.BASE_URL);
-    }
 
     public function show(int $id = 0) : void
     {

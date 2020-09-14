@@ -32,7 +32,7 @@ class CategoryController extends Controller {
         $this->prod = new Product();
 
         $this->prod->setCategoryId(intval($id));
-        $this->data['category'] = $this->prodDAO->getProductByCategory($this->prod,($page * 4));
+        $this->data['category'] = $this->prodDAO->getProductByCategory($this->prod->getCategoryId(),($page * 4));
         
         $this->loadView($viewPath, $viewName, $this->data);
     }
