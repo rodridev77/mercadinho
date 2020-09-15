@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" id="product-id" value="<?= $product->getPrice(); ?>">
+                <input type="hidden" id="product-id" value="<?= $product->getId(); ?>">
             </div>
             <?php endforeach; ?>
         </div>
