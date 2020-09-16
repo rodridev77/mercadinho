@@ -17,9 +17,9 @@ class ProductDAO {
         $this->conn = Connection::connect();
     }
 
-    public function getProductList(int $categoryId, int $limit = 4) : array
+    public function getProductList(int $categoryId, int $rowStart = 0, int $limit = 4) : array
     { 
-        return $this->getProductByCategory($categoryId);
+        return $this->getProductByCategory($categoryId, $rowStart, $limit);
     }
 
     public function getProductById(Product $prod) : Product
@@ -67,7 +67,6 @@ class ProductDAO {
     {
         $categoryProductListAux = [];
         $categoryProductList = [];
-        $this->product = new Product();
         $imageDAO = new ImageDAO();
 
         if (!empty($categoryId)) 
@@ -78,7 +77,7 @@ class ProductDAO {
                 $query = "SELECT *, ".
                 "(select brand.name from brand where brand.id = product.brand_id) as brand_name, ".
                 "(select category.name from category where category.id = product.category_id) as category_name ".
-                "FROM product WHERE category_id = :id ORDER BY product.title ASC LIMIT :rowstart, :limit";
+                "FROM product WHERE category_id = :id ORDER BY product.id DESC LIMIT :rowstart, :limit";
                 
                 $stmt = $this->conn->prepare($query);
                 $stmt->bindValue(":id", $categoryId, PDO::PARAM_INT);
@@ -92,6 +91,8 @@ class ProductDAO {
                     
                     foreach ($categoryProductListAux as $key => $prod)
                     {
+                        $this->product = new Product();
+
                         $this->product->setId($prod->id);
                         $this->product->setTitle($prod->title);
                         $this->product->setDescription($prod->description);

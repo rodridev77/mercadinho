@@ -39,10 +39,16 @@
                 </div>
                 <div class="col-sm-7 box-button-add">
                     <div class="btn-buy">
+                        <div class="product-qtty-box add_to_cart">
+                            <span class="qtty-icon-minus" data-action="decrease">-</span>
+                            <input id="count-product" type="number" size="3" name="count-product" min="1" value="1"
+                                disabled>
+                            <span class="qtty-icon-plus" data-action="increase">+</span>
+                        </div>
+
                         <div class="btn-component">
-                            <button class="btn btn-success" type="button" onclick="addToCart();">Adicionar</button>
+                            <button class="btn btn-success" type="button" onclick="">Adicionar</button>
                             <input type="hidden" id="product-id" name="product-id" value="<?= $product->getId(); ?>">
-                            <input type="hidden" id="count-product" name="count-product" value="1">
                         </div>
                     </div>
                 </div>

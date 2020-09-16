@@ -21,7 +21,7 @@ class ProductController extends Controller {
         $this->prod = new Product();
 
         $this->prod->setId(intval($id));
-        $this->data['product'] = $this->prodDAO->getProductById($this->prod, 4, 0);
+        $this->data['product'] = $this->prodDAO->getProductById($this->prod, 0, 4);
         
         $this->loadTemplate($viewPath, $viewName, $this->data);
     }

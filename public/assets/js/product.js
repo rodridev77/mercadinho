@@ -1,17 +1,11 @@
 
-function productPage() 
+function productPage(productId) 
 {
-
-    let productId = document.querySelector("#product-id").value
-
     window.location = BASE_URL + "/product/show/"+productId;
 }
 
-function addToCart()
+function addToCart(productId, countProduct)
 {
-    let productId = parseInt(document.querySelector("#product-id").value);
-    let countProduct = parseInt(document.querySelector("#count-product").value);
-
     const data = {
         "productId": productId,
         "countProduct": countProduct
@@ -27,26 +21,27 @@ function addToCart()
 $('.add_to_cart span').on('click', function(event) {
     event.preventDefault();
 
+    let productId = parseInt(document.querySelector("#product-id").value);
     var countProduct = parseInt(document.querySelector("#count-product").value);
+    
     var action = $(this).attr('data-action');
 
-    if (action === 'decrease') {
+    if (action == 'decrease') {
         if ((countProduct > 1)) {
             countProduct--;
         }
-    } else if (action === 'increase') {
+    } else if (action == 'increase') {
         countProduct++;
     }
 
-    $('.product-qtty').val(countProduct);
-    $('input[name=count-product]').val(countProduct);
+    $('#count-product').val(countProduct);
 
-    addToCart();
+    addToCart(productId, countProduct);
 });
 
 function addToCart2()
 {
-    let productId = parseInt(document.querySelector("#product-id").value);
+    let productId = parseInt(document.querySelector(".product-id").value);
 
     const data = {
         "productId": productId,

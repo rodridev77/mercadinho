@@ -7,7 +7,7 @@
             <?php extract($product); ?>
             <div class="card product-card">
                 <div class="card-item">
-                    <div class="product-img" onclick="productPage();">
+                    <div class="product-img" onclick="productPage(<?= $product->getId(); ?>);">
                         <img class="card-img-top" src="<?= BASE_URL.'/public/assets/images/products/'.$image; ?>" alt="Card image cap">
                     </div>
                     <div class="card-body">
@@ -22,7 +22,6 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" id="product-id" value="<?= $product->getId(); ?>">
             </div>
             <?php endforeach; ?>
         </div>

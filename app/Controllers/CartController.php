@@ -34,9 +34,10 @@ class CartController extends Controller {
         $this->loadTemplate($viewPath, $viewName, $this->data);
     }
 
-    public function add() 
+    public function add() : void
     {
         $data = json_decode(file_get_contents("php://input"),true);
+        $this->data['success'] = false;
 
         if (!empty($data['productId'])) 
         {
@@ -47,19 +48,19 @@ class CartController extends Controller {
                 $_SESSION['cart'] = [];
             endif;
 
-            if (isset($_SESSION['cart'][$productId])):
-                $_SESSION['cart'][$productId] += $countProduct;
-            else:
+            //if (isset($_SESSION['cart'][$productId])):
+               /** $_SESSION['cart'][$productId] += $countProduct;*/
                 $_SESSION['cart'][$productId] = $countProduct;
-            endif;
+            //endif;
 
-            echo json_encode(["success"=>true]);
+            $this->data['success'] = true;
         }
 
-        echo json_encode(["success"=>false]);
+        echo json_encode($this->data['success']);
     }
 
-    public function delete($id) {
+    public function delete($id) : void
+    {
 
         if (!empty($id)):
             unset($_SESSION['cart'][$id]);

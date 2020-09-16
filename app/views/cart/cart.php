@@ -4,9 +4,11 @@
         <h2 class="page-title">Minha Cesta</h2>
     </header>
 
+    <?php //echo "<pre>"; print_r($list); ?>
+
     <section class="row cart-container">
         <div class="col-sm-8 cart-right-column">
-            
+
             <div class="cart-products">
                 <div class="row cart-columns">
                     <h3 class="col-sm-6">produto</h3>
@@ -36,12 +38,12 @@
 
                                 <div class="col-sm-3 product-qtty text-center">
                                     <div class="product-qtty-box add_to_cart">
-                                        <input type="hidden" id="product-id" name="product-id"
-                                            value="<?php echo $product->getId(); ?>">
                                         <span class="qtty-icon-minus" data-action="decrease">-</span>
                                         <input id="count-product" type="number" size="3" name="count-product" min="1"
-                                            value="1" disabled>
+                                            value="<?= $product->count; ?>" disabled>
                                         <span class="qtty-icon-plus" data-action="increase">+</span>
+                                        <input type="hidden" id="product-id" name="product-id"
+                                            value="<?php echo $product->getId(); ?>">
                                     </div>
                                 </div>
 
